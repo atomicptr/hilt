@@ -1,0 +1,25 @@
+<!doctype html>
+
+<div id="container"></div>
+
+<script src="../lib/hilt.js"></script>
+<script>
+
+    window.onload = function() {
+        let container = document.querySelector("#container")
+
+        let todo = ["ul",
+            ["li", {class: "todo"}, "Make better examples"],
+            ["li", {class: "todo"}, "Make more examples?"],
+            ["li", {class: "todo"}, "Make this example nice looking..."],
+        ]
+
+        let listObj = Hilt.compileDocument(todo)
+
+        container.appendChild(Hilt.compileDocument(["h1", "To Do:"]))
+        container.appendChild(listObj)
+
+        // print html code
+        console.log(Hilt.compileDocumentString(todo))
+    }
+</script>

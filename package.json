@@ -1,0 +1,16 @@
+{
+  "name": "hilt",
+  "version": "0.1.0",
+  "description": "Simple Javascript library to create HTML structures without using preprocessors.",
+  "main": "lib/hilt.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine": "^2.5.2",
+    "mock-browser": "^0.92.12"
+  },
+  "scripts": {
+      "test": "./node_modules/jasmine/bin/jasmine.js"
+  },
+  "author": "Christopher Kaster",
+  "license": "MIT"
+}
