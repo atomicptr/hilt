@@ -1,4 +1,4 @@
-# hilt
+# hilt [![Build Status](https://travis-ci.org/atomicptr/hilt.svg?branch=master)](https://travis-ci.org/atomicptr/hilt)
 
 Simple Javascript library to create HTML structures without using preprocessors. React support coming soon...
 
