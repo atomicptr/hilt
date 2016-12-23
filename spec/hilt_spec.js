@@ -6,12 +6,13 @@ describe("hilt", () => {
     let Hilt = require("../lib/hilt.js");
 
     let compileTest = function(obj) {
-        let elementConstructor = (type) => document.createElement(type)
-        let attributeSet = (elem, ident, attr) => elem.setAttribute(ident, attr)
-        let elementAppend = (elem, child) => elem.appendChild(child)
-        let textNodeConstructor = (str) => document.createTextNode(str)
+        return Hilt.compileBase(obj, function(type, attributes, children) {
+            let elem = document.createElement(type);
+            Object.keys(attributes).forEach(ident => elem.setAttribute(ident, attributes[ident]))
+            children.forEach(child => elem.appendChild(child))
 
-        return Hilt.compileBase(obj, elementConstructor, attributeSet, elementAppend, textNodeConstructor)
+            return elem
+        }, (str) => document.createTextNode(str))
     }
 
     let compileTestString = function(obj) {
