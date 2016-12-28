@@ -1,6 +1,6 @@
 {
   "name": "hilt",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Simple Javascript library to create HTML structures without using preprocessors.",
   "main": "lib/hilt.js",
   "dependencies": {
