@@ -62,4 +62,21 @@ describe("hilt", () => {
 
         expect(inner.innerHTML).toEqual("This is like LISP")
     })
+
+    it("should be able to compile a fairly big structure", () => {
+        let obj = ["div", {id: "obj"}]
+
+        let children = new Array(1024)
+
+        children.fill(["div", {class: "testobj"}, ["span", "Hello"], ["span", "World!"]])
+
+        obj = obj.concat(children)
+
+        let compiled = compileTest(obj)
+        document.body.appendChild(compiled)
+
+        let objects = document.getElementsByClassName("testobj")
+
+        expect(objects.length).toEqual(1024)
+    })
 });
